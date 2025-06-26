@@ -1,26 +1,32 @@
 📚 LeetCode Practice Problems
 🟢 Easy
 #	Problem	Description	Link
-1️⃣	Two Sum	Classic use of complement + hashmap	#1
-2️⃣	Contains Duplicate	Check for repeated values	#217
-3️⃣	First Unique Character in a String	Frequency count of characters	#387
-4️⃣	Intersection of Two Arrays	Use HashSet to get common values	#349
-5️⃣	Isomorphic Strings	Map characters from one string to another	#205
+| #   | Problem                            | Description                               | LeetCode Q# |
+| --- | ---------------------------------- | ----------------------------------------- | ----------- |
+| 1️⃣ | Two Sum                            | Classic use of complement + HashMap       | #1          |
+| 2️⃣ | Contains Duplicate                 | Check for repeated values using HashSet   | #217        |
+| 3️⃣ | First Unique Character in a String | Frequency count of characters             | #387        |
+| 4️⃣ | Intersection of Two Arrays         | Use HashSet to get common values          | #349        |
+| 5️⃣ | Isomorphic Strings                 | Map characters from one string to another | #205        |
 
 🟡 Medium
 #	Problem	Description	Link
-6️⃣	Group Anagrams	Hash characters → group same freq maps	#49
-7️⃣	Subarray Sum Equals K	Track prefix sum with HashMap	#560
-8️⃣	Longest Substring Without Repeating Characters	Sliding window + Set/Map	#3
-9️⃣	Copy List with Random Pointer	Use HashMap for node mapping	#138
-🔟	Find All Anagrams in a String	Compare sliding window frequencies	#438
+| #   | Problem                                        | Description                                 | LeetCode Q# |
+| --- | ---------------------------------------------- | ------------------------------------------- | ----------- |
+| 6️⃣ | Group Anagrams                                 | Hash characters → group same frequency maps | #49         |
+| 7️⃣ | Subarray Sum Equals K                          | Track prefix sum with HashMap               | #560        |
+| 8️⃣ | Longest Substring Without Repeating Characters | Sliding window + Set/Map                    | #3          |
+| 9️⃣ | Copy List with Random Pointer                  | Use HashMap for deep copy of complex object | #138        |
+| 🔟  | Find All Anagrams in a String                  | Compare sliding window frequencies          | #438        |
 
 🔴 Hard
 #	Problem	Description	Link
-1️⃣1️⃣	Longest Consecutive Sequence	Use HashSet for O(n) solution	#128
-1️⃣2️⃣	Minimum Window Substring	Frequency map + sliding window	#76
-1️⃣3️⃣	Substring with Concatenation of All Words	Map all words + sliding check	#30
-1️⃣4️⃣	Max Points on a Line	Hash slopes between points	#149
+| #      | Problem                                   | Description                          | LeetCode Q# |
+| ------ | ----------------------------------------- | ------------------------------------ | ----------- |
+| 1️⃣1️⃣ | Longest Consecutive Sequence              | Use HashSet for O(n) sequence length | #128        |
+| 1️⃣2️⃣ | Minimum Window Substring                  | Frequency map + sliding window       | #76         |
+| 1️⃣3️⃣ | Substring with Concatenation of All Words | Map all words + sliding window check | #30         |
+| 1️⃣4️⃣ | Max Points on a Line                      | Hash slopes between points           | #149        |
 
 🌈 Bonus Tips
 ✨ Use .getOrDefault(key, 0) to simplify value access
