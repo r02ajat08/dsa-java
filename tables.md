@@ -61,6 +61,8 @@ Use Counting/Radix/Bucket when data is in a known range and integer-based.
 Merge sort is stable but needs extra space.
 
 Quick sort is the go-to for in-place fast sorting (except in worst case).
+
+
 | Algorithm                | Time Complexity  | Space      | Stable | Use When...                         |
 | ------------------------ | ---------------- | ---------- | ------ | ----------------------------------- |
 | 🔷 Bubble Sort           | `O(n^2)`         | `O(1)`     | ✅      | Educational, not used in practice   |
@@ -73,3 +75,11 @@ Quick sort is the go-to for in-place fast sorting (except in worst case).
 
 
 
+| 💬 If Problem Mentions...            | 💡 Use Sorting To...                   |
+| ------------------------------------ | -------------------------------------- |
+| "Intervals", "Merge", "Schedule"     | Sort by start/end time                 |
+| "Kth smallest/largest"               | Sort or use QuickSelect / Heap         |
+| "Custom order / Comparator"          | Write a custom sort function           |
+| "Greedy choices"                     | Sort first to optimize decision-making |
+| "Group / categorize / organize data" | Sort for grouping                      |
+| "Need sorted array as a base"        | Preprocess with sorting                |
