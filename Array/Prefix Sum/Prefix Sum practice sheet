@@ -1,0 +1,50 @@
+🧠➕ Prefix Sum Pattern Practice – LeetCode Edition
+🟢 Easy Level
+#	Problem	Description	Link
+1️⃣	Running Sum of 1D Array	Basic prefix sum calculation	#1480
+2️⃣	Find Pivot Index	Find index where left = right sum	#724
+3️⃣	Minimum Value to Get Positive Step by Step Sum	Keep cumulative sum always ≥ 1	#1413
+4️⃣	Sum of All Odd Length Subarrays	Creative prefix trick with odd windows	#1588
+5️⃣	Build Array from Permutation	Indirect use of prefix understanding	#1920
+
+🟡 Medium Level
+#	Problem	Description	Link
+6️⃣	Range Sum Query - Immutable	Classic prefix sum query builder	#303
+7️⃣	Subarray Sum Equals K	Count subarrays with sum = k	#560
+8️⃣	Contiguous Array	Convert 0s/1s, then find equal sum subarray	#525
+9️⃣	Binary Subarrays With Sum	Subarrays with exact sum S	#930
+🔟	Number of Ways to Split Array	Split point where left sum ≥ right	#2270
+1️⃣1️⃣	Find the Middle Index in Array	Pivot index variant	#1991
+1️⃣2️⃣	Find Target Indices After Sorting Array	Use prefix-style thinking with sorting	#2089
+
+🔴 Hard Level
+#	Problem	Description	Link
+1️⃣3️⃣	Maximum Sum of 3 Non-Overlapping Subarrays	Prefix + DP + sliding window	#689
+1️⃣4️⃣	Range Sum Query 2D - Immutable	2D prefix sum! Sum of any rectangle	#304
+1️⃣5️⃣	Shortest Subarray with Sum at Least K	Monotonic Queue + Prefix Sum	#862
+1️⃣6️⃣	Longest Well-Performing Interval	Prefix trick with work hours	#1124
+1️⃣7️⃣	Split Array Largest Sum	Binary Search + Prefix (conceptually)	#410
+
+🌈 Bonus Tips for Prefix Sum Problems:
+🎯 Always start with cumulative sum idea:
+
+java
+Copy
+Edit
+prefix[i] = prefix[i-1] + arr[i];
+🧮 Edge Cases: Watch out when i = 0 → no prefix[i-1] → handle separately.
+
+🧊 Negative numbers? → Use a HashMap to store prefix sums (e.g., #560, #525)
+
+📦 2D Grid? → Preprocess each row and column like:
+
+java
+Copy
+Edit
+prefix[i][j] = matrix[i][j] + prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1];
+💡 Trick: Convert problem to finding subarrays with target sum using:
+
+text
+Copy
+Edit
+If prefix[j] - prefix[i-1] == k, then subarray(i to j) == k
