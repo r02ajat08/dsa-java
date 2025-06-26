@@ -1,0 +1,57 @@
+🎯 Why Use Monotonic Stack / Queue?
+Monotonic data structures help you solve problems where you need to:
+
+✅ Efficiently find relationships between elements like:
+Next Greater / Smaller Element
+
+Previous Greater / Smaller Element
+
+Max / Min in sliding window
+
+Instead of checking every pair (which takes O(n²)), you use a monotonic structure to do it in O(n) time!
+
+🧠 How It Works (Simple Idea):
+You maintain order in a stack or queue:
+
+🔼 Increasing → smallest on top
+
+🔽 Decreasing → largest on top
+
+You pop unnecessary elements — keeping only useful ones for future comparisons.
+
+🔄 Real-Life Analogy:
+📦 Imagine you're stacking boxes where you only care about taller boxes coming next.
+If a new box is taller than the top one, you pop the shorter one — because it's useless now.
+That’s what a monotonic stack does! 🧱➡️🧱➡️📏
+
+🛠 Use Cases in DSA
+💬 Problem Type	🔍 Why Use Monotonic Stack/Queue?
+Next Greater Element	Efficiently skip all smaller elements
+Sliding Window Maximum/Minimum	Maintain max/min without rechecking window
+Largest Rectangle in Histogram	Helps find bounds for area calculation
+Stock Span Problem	Track previous days with lower prices
+Drop smaller/larger during iteration	Remove useless elements in O(1)
+
+📈 Why Not Just Loop?
+❌ Brute-force:
+java
+Copy
+Edit
+for (int i = 0; i < n; i++) {
+    for (int j = i+1; j < n; j++) {
+        // Compare each pair → O(n²)
+    }
+}
+✅ Monotonic Stack:
+java
+Copy
+Edit
+// Push, Pop only once → O(n)
+This saves tons of time, especially in long arrays! 🕒
+
+⚡ Summary
+📌 Advantage	✅ Yes!
+Reduces time from O(n²) to O(n)	✅
+Keeps track of useful elements	✅
+Can combine with Sliding Window	✅ (for max/min window problems)
+
