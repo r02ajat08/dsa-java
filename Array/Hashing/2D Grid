@@ -1,0 +1,119 @@
+🔥 Advanced Hashing Use Cases
+📦 6️⃣ 2D Grid – Counting Submatrices That Sum to Target
+🎯 Problem: Given a matrix grid[][] and integer target, count the number of submatrices that sum to target.
+
+This is a 2D version of Subarray Sum Equals K using prefix sum + hashing.
+
+🔗 LeetCode: 1074. Number of Submatrices That Sum to Target
+
+✅ Intuition:
+Fix top and bottom rows.
+
+Compress columns to 1D sum.
+
+Apply prefix sum with hashmap on each compressed array.
+
+💻✨ Java Code:
+java
+Copy
+Edit
+// ⭐️ Count submatrices that sum to target
+public int numSubmatrixSumTarget(int[][] matrix, int target) {
+    int m = matrix.length, n = matrix[0].length;
+    int res = 0;
+
+    // Calculate prefix sums for rows
+    for (int[] row : matrix) {
+        for (int j = 1; j < n; j++) {
+            row[j] += row[j - 1];
+        }
+    }
+
+    // Iterate over all column pairs
+    for (int startCol = 0; startCol < n; startCol++) {
+        for (int endCol = startCol; endCol < n; endCol++) {
+            Map<Integer, Integer> map = new HashMap<>();
+            map.put(0, 1);
+            int currSum = 0;
+
+            for (int row = 0; row < m; row++) {
+                int sum = matrix[row][endCol] - (startCol > 0 ? matrix[row][startCol - 1] : 0);
+                currSum += sum;
+                res += map.getOrDefault(currSum - target, 0);
+                map.put(currSum, map.getOrDefault(currSum, 0) + 1);
+            }
+        }
+    }
+
+    return res;
+}
+💡 Why Hashing?
+We compress the 2D problem into a 1D prefix sum problem.
+
+HashMap helps track how many times a sum has occurred — same as in 1D prefix tricks.
+
+🎭 7️⃣ Hashing with Custom Keys (Tuple/Pair Keys)
+Problem: Count rectangles with equal area or same rows.
+
+🔗 LeetCode Example: Equal Row and Column Pairs – #2352
+
+💡 Hashing Trick:
+Use stringified rows as keys in HashMap!
+
+You can also hash custom pairs (a, b) by converting them to string.
+
+💻✨ Java Code:
+java
+Copy
+Edit
+// ⭐️ Count equal row-column pairs
+public int equalPairs(int[][] grid) {
+    int n = grid.length;
+    Map<String, Integer> rowMap = new HashMap<>();
+
+    // Hash each row
+    for (int[] row : grid) {
+        String key = Arrays.toString(row);
+        rowMap.put(key, rowMap.getOrDefault(key, 0) + 1);
+    }
+
+    int count = 0;
+
+    // Compare each column with rows
+    for (int col = 0; col < n; col++) {
+        int[] colArr = new int[n];
+        for (int row = 0; row < n; row++) {
+            colArr[row] = grid[row][col];
+        }
+        String colKey = Arrays.toString(colArr);
+        count += rowMap.getOrDefault(colKey, 0);
+    }
+
+    return count;
+}
+🌌 8️⃣ HashMap + Bitmasking (Advanced Trick)
+Use HashMap where keys are bitmasks — useful for subsets, palindromes, words, etc.
+
+🔗 Example: 1178. Number of Valid Words for Each Puzzle
+
+✨ Highlight: Using bitmask as key!
+java
+Copy
+Edit
+int mask = 0;
+for (char c : word.toCharArray()) {
+    mask |= 1 << (c - 'a');
+}
+map.put(mask, map.getOrDefault(mask, 0) + 1);
+🌟 Tips to Detect When to Use Hashing (Recap)
+🧭 Question contains:
+
+“Frequency”, “Duplicates”, “Exists”
+
+“Sum equals target”
+
+“Group by something”
+
+“Count valid pairs”
+
+“Without sorting / O(n)”
