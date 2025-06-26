@@ -1,0 +1,52 @@
+🧠 What Is Recursion?
+Recursion is when a function calls itself to solve smaller subproblems.
+Every recursion has two key parts:
+
+🧱 Base Case – when to stop
+
+🔄 Recursive Case – break the problem down
+
+📦 When to Use Recursion?
+💬 If problem mentions...	💡 Recursion might help when...
+"All combinations / permutations"	Try every possible option (backtracking)
+"Tree traversal / divide structure"	Natural recursive structure (e.g., binary tree)
+"Subproblem of subproblem..."	Break problem into smaller versions of itself
+"Count/Generate paths or ways"	Explore all choices recursively
+"Try every path or decision"	Need to explore all possible states
+
+🧩 Recursion Patterns
+🔢	Pattern	Use Case / Description
+1️⃣	Basic Recursion	Factorial, Fibonacci, Power, Sum
+2️⃣	Backtracking	Generate combinations/permutations, N-Queens
+3️⃣	DFS Recursion	Trees, Graphs, Grid traversal
+4️⃣	Divide & Conquer	Merge Sort, Quick Sort, Binary Search
+5️⃣	Subset/Permutation	Use for loop and recursive calls
+6️⃣	Memoized Recursion (DP)	Use HashMap or array to store intermediate results
+
+📦 Java Code Templates
+➕ Factorial (basic recursion)
+java
+Copy
+Edit
+int fact(int n) {
+    if (n == 0) return 1; // base case
+    return n * fact(n - 1); // recursive step
+}
+🔁 Print all subsets (backtracking)
+java
+Copy
+Edit
+void generateSubsets(int[] nums, int index, List<Integer> curr) {
+    if (index == nums.length) {
+        System.out.println(curr);
+        return;
+    }
+
+    // Include current element
+    curr.add(nums[index]);
+    generateSubsets(nums, index + 1, curr);
+
+    // Exclude current element
+    curr.remove(curr.size() - 1);
+    generateSubsets(nums, index + 1, curr);
+}
