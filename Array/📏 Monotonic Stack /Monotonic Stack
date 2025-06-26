@@ -1,0 +1,55 @@
+ What Is It?
+A monotonic stack or queue is one that keeps its elements increasing or decreasing to maintain a useful order for comparison.
+
+🔼 Monotonic Increasing Stack → Top has the smallest element
+
+🔽 Monotonic Decreasing Stack → Top has the largest element
+
+🔍 When to Use This Pattern?
+💬 If Problem Mentions...	💡 Use Monotonic Stack/Queue When…
+"Next Greater Element" (or smaller)	Maintain increasing/decreasing stack
+"Sliding Window Max/Min"	Monotonic queue for max/min in O(n)
+"Stock Span", "Histogram Area"	Use stack to compare with previous elements
+"Drop smaller/larger items from window"	Monotonic queue for pruning elements
+"First greater/smaller on left/right"	Use stack from left/right direction
+
+🧪 Java Code Template (NGE - Next Greater Element)
+java
+Copy
+Edit
+public int[] nextGreaterElements(int[] nums) {
+    int[] res = new int[nums.length];
+    Stack<Integer> stack = new Stack<>();
+
+    for (int i = nums.length - 1; i >= 0; i--) {
+        while (!stack.isEmpty() && stack.peek() <= nums[i])
+            stack.pop();
+
+        res[i] = stack.isEmpty() ? -1 : stack.peek();
+        stack.push(nums[i]);
+    }
+    return res;
+}
+📊 Monotonic Queue Example (Sliding Window Max)
+java
+Copy
+Edit
+public int[] maxSlidingWindow(int[] nums, int k) {
+    Deque<Integer> deque = new ArrayDeque<>();
+    int[] res = new int[nums.length - k + 1];
+    int i = 0;
+
+    for (int j = 0; j < nums.length; j++) {
+        while (!deque.isEmpty() && deque.peekLast() < nums[j])
+            deque.pollLast();
+        deque.addLast(nums[j]);
+
+        if (j - i + 1 == k) {
+            res[i] = deque.peekFirst();
+            if (deque.peekFirst() == nums[i])
+                deque.pollFirst();
+            i++;
+        }
+    }
+    return res;
+}
