@@ -1,0 +1,20 @@
+🧠 Recursion vs Iteration
+🔁 Recursion	🔂 Iteration
+Elegant, clean code	Often faster
+Risk of stack overflow	No such risk
+Used for trees/graphs	Used for loops/counting
+Overhead of function calls	Efficient in time
+
+🧠 Tips to Master Recursion
+✅ Always define the:
+
+Base case → When to return
+
+Recursive step → Smaller subproblem
+
+Parameters → Pass only what’s needed
+
+🔁 Think:
+
+"Can I solve a small part and let recursion do the rest?"
+
