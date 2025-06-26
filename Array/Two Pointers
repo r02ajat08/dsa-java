@@ -1,0 +1,188 @@
+🔹 What is the Two Pointers Pattern?
+It uses two variables (usually left and right) to traverse an array or string—either from both ends or with one lagging behind the other.
+
+🔹 When to Use Two Pointers
+✅ Sorted arrays or strings
+✅ Need to examine pairs or ranges
+✅ Avoiding nested loops (brute force)
+✅ Partitioning, reversing, merging, searching
+
+🔹 Common Use Cases
+Use Case	Example
+Pair sum	Find if two numbers sum to target
+Reverse array	Swap from start and end
+Remove duplicates	In-place removal from sorted array
+Move zeros	Push zeros to end while keeping order
+Merge sorted arrays	Without extra space
+Palindrome check	Compare characters from both ends
+
+✅ Examples with Code
+📘 Example 1: Pair with Target Sum (Sorted Array)
+Problem:
+
+Given a sorted array, find if there exists a pair whose sum equals a target.
+
+Input: arr = [1, 2, 4, 4], target = 8
+Output: true
+
+Approach:
+
+Use left = 0, right = n - 1
+
+If arr[left] + arr[right] > target, move right--
+
+Else if less, move left++
+
+Java Code:
+
+java
+Copy
+Edit
+public class PairWithTargetSum {
+    public static boolean hasPair(int[] arr, int target) {
+        int left = 0, right = arr.length - 1;
+
+        while (left < right) {
+            int sum = arr[left] + arr[right];
+            if (sum == target) return true;
+            else if (sum < target) left++;
+            else right--;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 4, 4};
+        int target = 8;
+        System.out.println(hasPair(arr, target)); // true
+    }
+}
+📘 Example 2: Remove Duplicates from Sorted Array
+Problem:
+
+Given a sorted array, remove duplicates in-place and return the new length.
+
+Input: arr = [1, 1, 2, 3, 3]
+Output: 3 → [1, 2, 3]
+
+Approach:
+
+Use slow pointer for unique insert position
+
+fast pointer scans through array
+
+Java Code:
+
+java
+Copy
+Edit
+public class RemoveDuplicates {
+    public static int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+        int slow = 1;
+
+        for (int fast = 1; fast < nums.length; fast++) {
+            if (nums[fast] != nums[fast - 1]) {
+                nums[slow++] = nums[fast];
+            }
+        }
+
+        return slow;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 1, 2, 3, 3};
+        int len = removeDuplicates(nums);
+        System.out.print("After removing: ");
+        for (int i = 0; i < len; i++) System.out.print(nums[i] + " ");
+    }
+}
+📘 Example 3: Valid Palindrome
+Problem:
+
+Check if a string is a valid palindrome (ignore case and non-alphanumerics)
+
+Input: "A man, a plan, a canal: Panama"
+Output: true
+
+Approach:
+
+Use left and right to compare characters inward.
+
+Skip non-alphanumeric.
+
+Java Code:
+
+java
+Copy
+Edit
+public class ValidPalindrome {
+    public static boolean isPalindrome(String s) {
+        s = s.toLowerCase();
+        int left = 0, right = s.length() - 1;
+
+        while (left < right) {
+            if (!Character.isLetterOrDigit(s.charAt(left))) {
+                left++;
+            } else if (!Character.isLetterOrDigit(s.charAt(right))) {
+                right--;
+            } else if (s.charAt(left) != s.charAt(right)) {
+                return false;
+            } else {
+                left++;
+                right--;
+            }
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String s = "A man, a plan, a canal: Panama";
+        System.out.println(isPalindrome(s)); // true
+    }
+}
+📘 Example 4: Move Zeroes to End
+Problem:
+
+Move all zeroes to the end of array while keeping the relative order of non-zero elements.
+
+Input: [0, 1, 0, 3, 12]
+Output: [1, 3, 12, 0, 0]
+
+Approach:
+
+Use nonZeroIndex to track where to move non-zero elements.
+
+Java Code:
+
+java
+Copy
+Edit
+public class MoveZeroes {
+    public static void moveZeroes(int[] nums) {
+        int nonZeroIndex = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                int temp = nums[nonZeroIndex];
+                nums[nonZeroIndex] = nums[i];
+                nums[i] = temp;
+                nonZeroIndex++;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {0, 1, 0, 3, 12};
+        moveZeroes(nums);
+        for (int n : nums) System.out.print(n + " ");
+    }
+}
+
+
+🧠 Pattern Summary
+Problem	Left/Right Movement	Condition to Update
+Pair Sum in Sorted Array	Start + End → Inward	Compare to target sum
+Remove Duplicates in Sorted Array	Slow-Fast → Forward	If value changes
+Valid Palindrome	Start + End → Inward	Compare after filter
+Move Zeroes	Fast + Slow → Forward	If non-zero found
