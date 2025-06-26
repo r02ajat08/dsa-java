@@ -1,0 +1,32 @@
+✅ Difficulty levels (Easy / Medium / Hard)
+
+🔗 Direct links to LeetCode problems
+
+✏️ Real-world problem types: pair sums, palindrome check, duplicates removal, etc.
+
+📘 Two Pointers Practice Sheet
+🟢 Easy Level
+#	Problem	Description	Link
+1️⃣	Valid Palindrome	Check if string is the same forwards and backwards (ignore punctuation)	LeetCode #125
+2️⃣	Move Zeroes	Move all zeroes to the end while keeping order	LeetCode #283
+3️⃣	Squares of a Sorted Array	Return array of squares in sorted order	LeetCode #977
+
+🟡 Medium Level
+#	Problem	Description	Link
+4️⃣	Two Sum II - Input Array Is Sorted	Find two numbers that sum to a target (sorted input)	LeetCode #167
+5️⃣	3Sum	Find all unique triplets with zero sum	LeetCode #15
+6️⃣	Remove Duplicates from Sorted Array	In-place removal of duplicates	LeetCode #26
+7️⃣	Container With Most Water	Max area between two heights	LeetCode #11
+
+🔴 Hard Level
+#	Problem	Description	Link
+8️⃣	Trapping Rain Water	Calculate trapped rain using height bars	LeetCode #42
+9️⃣	Merge Sorted Array (In-place)	Merge two sorted arrays without extra space	LeetCode #88
+🔟	Shortest Subarray to Be Removed to Make Array Sorted	Remove the smallest subarray to sort the array	LeetCode #1574
+
+💡 Tips for Two Pointers
+Start from ends when working with sorted arrays.
+
+Use slow and fast pointers when modifying arrays in-place.
+
+For triplets or quadruplets, fix one pointer and move the other two.
