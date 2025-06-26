@@ -1,0 +1,23 @@
+📊 LeetCode Practice Problems
+🟢 Easy
+| #   | Problem                        | Type            |
+| --- | ------------------------------ | --------------- |
+| 509 | Fibonacci Number               | Basic Recursion |
+| 104 | Max Depth of Binary Tree       | Tree DFS        |
+| 144 | Binary Tree Preorder Traversal | Tree recursion  |
+
+🟡 Medium
+| #  | Problem                             | Type                |
+| -- | ----------------------------------- | ------------------- |
+| 46 | Permutations                        | Backtracking        |
+| 78 | Subsets                             | Backtracking        |
+| 39 | Combination Sum                     | Recursive DFS       |
+| 17 | Letter Combinations of Phone Number | Recursive choices   |
+| 22 | Generate Parentheses                | Recursion + strings |
+
+🔴 Hard
+| #   | Problem        | Type                 |
+| --- | -------------- | -------------------- |
+| 51  | N-Queens       | Backtracking         |
+| 52  | N-Queens II    | Count with recursion |
+| 212 | Word Search II | Trie + recursion     |
