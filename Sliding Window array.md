@@ -152,3 +152,30 @@ Problem Type	Window Type	Data Structures
 Max sum of subarray of size k	Fixed-size	Variables
 Min subarray length with sum ≥ target	Variable-size	Two pointers + sum
 Longest unique substring	Variable-size	Set / Map
+
+
+🛠 Pro Tip: Sliding Window Template (Java)
+Use this as a guide for variable-size sliding window:
+
+java
+Copy
+Edit
+int left = 0;
+for (int right = 0; right < nums.length; right++) {
+    // expand window by moving right
+
+    while (/* condition not met */) {
+        // shrink window from the left
+        left++;
+    }
+
+    // track answer: right - left + 1 or other
+}
+✅ How to Practice
+Pick 2–3 questions per day.
+
+First attempt yourself.
+
+Then study the pattern if you're stuck.
+
+Write brute-force then optimize using window.
