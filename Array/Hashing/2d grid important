@@ -1,0 +1,105 @@
+🧭✨ When to Use Advanced Hashing
+🧱 1️⃣ In 2D Grid Problems
+🧩 Clue: “Submatrix sum equals target” or “equal row/column”
+
+✅ Use Hashing when:
+
+You're compressing rows/columns into 1D.
+
+You're repeating 1D logic like prefix sums across 2D slices.
+
+🔑 Look for:
+
+“Number of submatrices”
+
+“Count equal row and column”
+
+“Find rectangles/blocks with same structure”
+
+➡️ Use:
+
+HashMap<sum, count> in compressed rows
+
+HashMap<String, Integer> to hash entire row/column as string
+
+🎭 2️⃣ When Input Has Complex Keys (Like Tuples, Arrays)
+🧩 “Group similar structures”, “Track unique patterns”
+
+✅ Use Hashing when:
+
+You need to group anagrams, rows, pairs, or grids.
+
+Keys aren’t just int, but arrays, strings, or custom combos.
+
+🔑 Clues:
+
+“Same row/column”
+
+“Group all similar...”
+
+“Count pairs of...”
+
+➡️ Convert key to:
+
+Arrays.toString(arr)
+
+Custom key: x + "#" + y
+
+Bitmask: 1 << (c - 'a')
+
+🧠 3️⃣ In Very Large Datasets (Need O(1) access)
+🧩 “1 ≤ n ≤ 10⁵”, “optimize time”, “O(n)” solutions needed
+
+✅ Use Hashing when:
+
+Sorting is too slow (O(n log n))
+
+You need to quickly check existence or frequency
+
+🔑 Clues:
+
+“Does this exist?”
+
+“Count number of...”
+
+“Avoid brute-force”
+
+➡️ Use:
+
+HashSet for existence
+
+HashMap for counts, sums, indexes
+
+🔮 4️⃣ When Using Bitmask with Words or Subsets
+🧩 Used in puzzles, strings with characters a-z.
+
+✅ Use Hashing when:
+
+Each word is turned into a bitmask.
+
+You need fast bitwise grouping/lookup.
+
+🔑 Clues:
+
+“Each word has only 7 unique characters”
+
+“Subset must contain first letter”
+
+“Character-based puzzles”
+
+➡️ Use:
+
+Map<bitmask, count>
+
+Iterate all bitmask subsets
+
+🔖 Summary: Spot Hashing with These Phrases in Questions
+💬 Question Says...	🧠 Think Hashing?
+“Count how many…”	✅ Yes
+“Does this value/combination exist?”	✅ Yes
+“Group same items”	✅ Yes
+“Avoid brute-force O(n²)”	✅ Yes
+“Need to optimize search/lookups”	✅ Yes
+“Equal rows / matching subarrays”	✅ Yes
+“Subset or pattern with letters a-z”	✅ Yes (bitmask + hash)
+
