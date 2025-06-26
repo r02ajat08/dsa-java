@@ -83,3 +83,18 @@ Quick sort is the go-to for in-place fast sorting (except in worst case).
 | "Greedy choices"                     | Sort first to optimize decision-making |
 | "Group / categorize / organize data" | Sort for grouping                      |
 | "Need sorted array as a base"        | Preprocess with sorting                |
+
+
+🧱 Data Structures Used in Bit Manipulation Problems
+
+| 📦 Data Structure                         | 📌 Purpose / Why It's Used                                       |
+| ----------------------------------------- | ---------------------------------------------------------------- |
+| 🔢 **Primitive Integers (`int`, `long`)** | Directly store and manipulate bits                               |
+| 📋 **Array**                              | Count set bits per position, store results of multiple XORs      |
+| 🧠 **HashMap / HashSet**                  | Handle duplicates or group numbers with same bit patterns        |
+| 🔢 **Bitmask (Integer)**                  | Represent presence/absence of elements (e.g. subsets, states)    |
+| 📊 **BitSet** (Java)                      | Space-optimized boolean array (like `boolean[]`, but compressed) |
+| 📄 **String**                             | Convert binary form, manipulate bits as characters               |
+| 🧮 **Queue / Stack**                      | Occasionally used with BFS/DFS + bitmask states                  |
+| 📈 **Trie (Binary Trie)**                 | Store binary representation of numbers (used in max XOR queries) |
+
