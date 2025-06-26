@@ -1,0 +1,115 @@
+🧠➕ Prefix Sum Pattern Cheat Sheet
+📘 What is Prefix Sum?
+Prefix Sum is a technique used to quickly calculate the sum of any subarray.
+Instead of re-adding every time, we precompute cumulative sums once and then use subtraction!
+
+🧩 Why Use It?
+✅ When you need many sum queries on the same array
+✅ To avoid O(n²) loops
+✅ Helpful in problems like:
+
+Range sum queries
+
+Subarray sum = K
+
+Pivot index
+
+Equilibrium point
+
+🔢 Prefix Sum Formula
+text
+Copy
+Edit
+prefix[i] = prefix[i - 1] + arr[i]
+To find the sum of any subarray from i to j:
+
+text
+Copy
+Edit
+sum(i, j) = prefix[j] - prefix[i - 1]
+✅ Example Problems
+🌟 Example 1: Range Sum Query
+Input:
+arr = [1, 2, 3, 4, 5], Query: sum(1, 3)
+Output: 9 → 2 + 3 + 4
+
+💡 Approach:
+Create a prefix[] array
+
+For sum from i to j, use:
+prefix[j] - prefix[i - 1]
+
+👨‍💻 Java Code:
+java
+Copy
+Edit
+int[] buildPrefixSum(int[] arr) {
+    int[] prefix = new int[arr.length];
+    prefix[0] = arr[0];
+
+    for (int i = 1; i < arr.length; i++) {
+        prefix[i] = prefix[i - 1] + arr[i];
+    }
+    return prefix;
+}
+
+int rangeSum(int[] prefix, int i, int j) {
+    if (i == 0) return prefix[j];
+    return prefix[j] - prefix[i - 1];
+}
+🌟 Example 2: Pivot Index 🏋️
+Problem: Find index where left sum = right sum
+Input: [1, 7, 3, 6, 5, 6]
+Output: 3
+
+💡 Approach:
+Total sum = 28
+
+Left sum = 1 + 7 + 3 = 11
+
+Right sum = 5 + 6 = 11 ⇒ Balanced!
+
+👨‍💻 Java Code:
+java
+Copy
+Edit
+int findPivotIndex(int[] nums) {
+    int total = 0, left = 0;
+    for (int n : nums) total += n;
+
+    for (int i = 0; i < nums.length; i++) {
+        if (left == total - left - nums[i]) return i;
+        left += nums[i];
+    }
+    return -1;
+}
+🌟 Example 3: Subarray Sum Equals K 🎯
+Problem: Count subarrays that sum to k
+Input: arr = [1, 1, 1], k = 2
+Output: 2
+
+💡 Approach:
+Use HashMap to store prefixSum frequency
+
+If prefixSum - k exists → subarray found!
+
+👨‍💻 Java Code:
+java
+Copy
+Edit
+int subarraySum(int[] nums, int k) {
+    Map<Integer, Integer> map = new HashMap<>();
+    map.put(0, 1);
+    int sum = 0, count = 0;
+
+    for (int num : nums) {
+        sum += num;
+        count += map.getOrDefault(sum - k, 0);
+        map.put(sum, map.getOrDefault(sum, 0) + 1);
+    }
+    return count;
+}
+🧠 Summary Table 📋
+Pattern	Use Case	Tools Used	Time	Space
+➕ Prefix Sum	Range sum, subarray sums	Array, HashMap	O(n)	O(n)
+
