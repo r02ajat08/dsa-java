@@ -1,4 +1,5 @@
  What is Sliding Window?
+ 
 Sliding Window is an efficient technique used to reduce nested loops into a single pass. It's most useful in problems involving contiguous subarrays or substrings.
 
 🔹 Types of Sliding Window
