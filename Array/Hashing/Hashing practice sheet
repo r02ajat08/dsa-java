@@ -1,0 +1,69 @@
+📚 LeetCode Practice Problems
+🟢 Easy
+#	Problem	Description	Link
+1️⃣	Two Sum	Classic use of complement + hashmap	#1
+2️⃣	Contains Duplicate	Check for repeated values	#217
+3️⃣	First Unique Character in a String	Frequency count of characters	#387
+4️⃣	Intersection of Two Arrays	Use HashSet to get common values	#349
+5️⃣	Isomorphic Strings	Map characters from one string to another	#205
+
+🟡 Medium
+#	Problem	Description	Link
+6️⃣	Group Anagrams	Hash characters → group same freq maps	#49
+7️⃣	Subarray Sum Equals K	Track prefix sum with HashMap	#560
+8️⃣	Longest Substring Without Repeating Characters	Sliding window + Set/Map	#3
+9️⃣	Copy List with Random Pointer	Use HashMap for node mapping	#138
+🔟	Find All Anagrams in a String	Compare sliding window frequencies	#438
+
+🔴 Hard
+#	Problem	Description	Link
+1️⃣1️⃣	Longest Consecutive Sequence	Use HashSet for O(n) solution	#128
+1️⃣2️⃣	Minimum Window Substring	Frequency map + sliding window	#76
+1️⃣3️⃣	Substring with Concatenation of All Words	Map all words + sliding check	#30
+1️⃣4️⃣	Max Points on a Line	Hash slopes between points	#149
+
+🌈 Bonus Tips
+✨ Use .getOrDefault(key, 0) to simplify value access
+✨ HashSet is great for checking existence
+✨ Frequency maps work for strings, arrays, characters, or even tuples
+✨ HashMaps can store index, frequency, or boolean flags — super flexible!
+
+🧠🧭 When to Use Hashing?
+🔍 Use HashMap or HashSet when you see these clues in the question:
+💬 Question Hint	🔑 What It Signals
+“Check if this element exists”	Use a HashSet for O(1) lookup
+“Find two numbers that add up to target”	Use a HashMap to store complements
+“Count how many times X appears”	Use a HashMap for frequency
+“Return first unique / non-repeating element”	Frequency counting → HashMap
+“Group things by similarity” (like anagrams)	Use hash of sorted string / freq array
+“Avoid duplicates”	Store seen elements in a HashSet
+“Track last seen index”	Store value → index in a HashMap
+“Sliding window with character counts”	Use Map<Character, Integer>
+“Longest streak / subarray / substring”	HashMap can track start positions
+“Match pattern / rearranged version of string”	Use frequency map for comparison
+
+📌 Pro Tip:
+🔁 Multiple passes over an array with counting or comparisons → likely means hashing is useful!
+
+🔧 Example Translations from Natural Language:
+🧾 Question Language	🔍 Use Hashing?	🛠️ How?
+"Are there duplicates in the array?"	✅ Yes	Store each in a HashSet
+"How many subarrays sum to k?"	✅ Yes	Prefix sum + HashMap
+"Which character appears most often?"	✅ Yes	HashMap<Character, Count>
+"Is the word an anagram of another?"	✅ Yes	Frequency map / sorted key
+"What is the longest substring without repeats?"	✅ Yes	Map characters to index
+
+🔑 Keywords That Hint: “Use Hashing!”
+"Check if exists"
+
+"First unique"
+
+"Count frequency"
+
+"Find pair that adds to target"
+
+"Group", "bucket", "classify"
+
+"Without duplicates"
+
+"Fast lookup"
