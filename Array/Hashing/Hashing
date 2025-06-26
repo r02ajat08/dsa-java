@@ -1,0 +1,48 @@
+🔍✨ Hashing (HashMap / HashSet) Pattern
+📘 What is Hashing?
+Hashing helps you store and find data fast using keys — like a magical dictionary! 🪄
+You use a HashMap or HashSet to quickly check:
+
+✅ If a number exists
+
+🧮 How many times it occurs
+
+🎯 If two numbers add up to a target
+
+🧩 Why Use Hashing?
+✅ Fast lookup in O(1) time
+✅ Store frequencies or indexes
+✅ Detect duplicates or missing elements
+✅ Used in: Two Sum, Frequency count, Longest subarrays, Anagrams
+
+💡 Real-Life Analogy:
+Think of HashMap as a magical cabinet 🗄️
+You can write a label (key) and quickly find its contents (value)! 🔑
+
+✅ Common HashMap Use Cases:
+Problem Type	Use HashMap to…
+Frequency Count	Track how many times something appears
+Two Sum / Complements	Track previous values & their positions
+Detect Duplicates	Use HashSet for fast existence check
+Longest Streaks / Windows	Store last index / counts
+Anagrams	Compare frequency maps
+
+👨‍💻 Java Code Snippets
+✨ Frequency Count Example:
+java
+Copy
+Edit
+Map<Integer, Integer> freq = new HashMap<>();
+for (int num : nums) {
+    freq.put(num, freq.getOrDefault(num, 0) + 1);
+}
+✨ Two Sum Using HashMap:
+java
+Copy
+Edit
+Map<Integer, Integer> map = new HashMap<>();
+for (int i = 0; i < nums.length; i++) {
+    int complement = target - nums[i];
+    if (map.containsKey(complement)) return new int[] { map.get(complement), i };
+    map.put(nums[i], i);
+}
