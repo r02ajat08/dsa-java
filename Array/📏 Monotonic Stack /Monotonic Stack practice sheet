@@ -1,0 +1,28 @@
+
+💥 Common Use Cases & Problems
+  🟢 Easy
+| #   | Problem                | Topic                   |
+| --- | ---------------------- | ----------------------- |
+| 739 | Daily Temperatures     | Next greater element    |
+| 496 | Next Greater Element I | Monotonic stack (basic) |
+
+🟡 Medium
+| #   | Problem                        | Topic                    |
+| --- | ------------------------------ | ------------------------ |
+| 503 | Next Greater Element II        | Circular monotonic stack |
+| 901 | Online Stock Span              | Stack span               |
+| 84  | Largest Rectangle in Histogram | NGE + Area calc          |
+| 239 | Sliding Window Maximum         | Monotonic **queue**      |
+
+🔴 Hard
+| #   | Problem                  | Topic              |
+| --- | ------------------------ | ------------------ |
+| 85  | Maximal Rectangle        | Histogram + DP     |
+| 316 | Remove Duplicate Letters | Monotonic + Greedy |
+💡 Bonus Tip
+✅ Use stack when checking with previous elements.
+
+✅ Use deque for window-based problems to maintain max/min.
+
+⚙️ Combine with Greedy when you need to keep the best element.
+
