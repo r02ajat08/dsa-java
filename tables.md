@@ -40,3 +40,26 @@
 | "Cycle / repeated value"         | 🌀 Fast & Slow Pointers    |
 | "Optimal choice at every step"   | 💡 Greedy                  |
 | "Sort or merge recursively"      | ⚔️ Divide & Conquer        |
+
+📊 🔃 Sorting Algorithms – Summary Table
+| 🔢 Algo        | 🔧 Type        | ⏱️ Time (Best / Avg / Worst)         | 💾 Space | 🔍 Stable | 🌟 Use Case                   |
+| -------------- | -------------- | ------------------------------------ | -------- | --------- | ----------------------------- |
+| 🫧 Bubble Sort | Comparison     | O(n) / O(n²) / O(n²)                 | O(1)     | ✅ Yes     | Teaching basics, small data   |
+| 🪣 Selection   | Comparison     | O(n²) / O(n²) / O(n²)                | O(1)     | ❌ No      | Simple, but not efficient     |
+| 🃏 Insertion   | Comparison     | O(n) / O(n²) / O(n²)                 | O(1)     | ✅ Yes     | Nearly sorted data            |
+| 🌊 Merge Sort  | Divide & Conq. | O(n log n) / O(n log n) / O(n log n) | O(n)     | ✅ Yes     | Linked lists, stable sort     |
+| 🔥 Quick Sort  | Divide & Conq. | O(n log n) / O(n log n) / O(n²)      | O(log n) | ❌ No      | Fastest on average            |
+| 🧊 Heap Sort   | Comparison     | O(n log n) / O(n log n) / O(n log n) | O(1)     | ❌ No      | Large data, priority queues   |
+| 🧺 Bucket Sort | Distribution   | O(n+k)                               | O(n+k)   | ✅ Yes     | Uniform distribution          |
+| ⬆️ Counting    | Non-comparison | O(n+k)                               | O(k)     | ✅ Yes     | Integers, bounded range       |
+| 🧮 Radix Sort  | Non-comparison | O(nk)                                | O(n+k)   | ✅ Yes     | Fixed-length integers/strings |
+📘 Tips:
+Stable sort keeps equal elements in the original order.
+
+Use Counting/Radix/Bucket when data is in a known range and integer-based.
+
+Merge sort is stable but needs extra space.
+
+Quick sort is the go-to for in-place fast sorting (except in worst case).
+
+
