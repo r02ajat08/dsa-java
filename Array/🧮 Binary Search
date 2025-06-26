@@ -1,0 +1,36 @@
+🧮 Binary Search – DSA Pattern
+🔍 What is Binary Search?
+Binary Search is used when you have a sorted array or you can apply monotonic logic (i.e., answer becomes better/worse as you move right). You repeatedly cut the search space in half — hence O(log n) time.
+
+🧠 When to Use Binary Search?
+Look for these clues in the problem:
+
+💬 If the problem says...	💡 Think of Binary Search on...
+"Find in sorted array"	✅ Sorted array
+"Minimum/Maximum possible value"	✅ Binary Search on answer (value space)
+"Kth element / peak / rotation / closest"	✅ Modified binary search (conditions)
+"Is it possible to...?"	✅ Search on result not the array
+
+⚙️ Types of Binary Search
+Type	Description	Time
+🎯 Basic Binary Search	Find exact element in sorted array	O(log n)
+🔄 Lower/Upper Bound	First ≥ target / last ≤ target	O(log n)
+🧮 Binary Search on Answer	Find min/max value that satisfies a condition	O(log(max))
+
+✨ Code Template (Classic)
+java
+Copy
+Edit
+int binarySearch(int[] arr, int target) {
+    int low = 0, high = arr.length - 1;
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+
+        if (arr[mid] == target) return mid;
+        else if (arr[mid] < target) low = mid + 1;
+        else high = mid - 1;
+    }
+
+    return -1; // not found
+}
