@@ -1,0 +1,201 @@
+✅ Easy: Factorial of a Number
+Problem: Return the factorial of n.
+
+🧠 Approach:
+Base Case: factorial(0) = 1
+
+Recursive Case: factorial(n) = n * factorial(n-1)
+
+💡 Code:
+java
+Copy
+Edit
+int factorial(int n) {
+    if (n == 0) return 1;           // base case
+    return n * factorial(n - 1);    // recursive step
+}
+🌱 Dry Run:
+text
+Copy
+Edit
+factorial(3)
+→ 3 * factorial(2)
+→ 3 * 2 * factorial(1)
+→ 3 * 2 * 1 * factorial(0)
+→ 3 * 2 * 1 * 1 = 6
+🟡 Medium 1: Generate All Subsets (Power Set)
+Problem: Given an array nums, return all possible subsets (the power set).
+
+🧠 Approach:
+Use backtracking with recursion
+
+At each index, choose to include or exclude the number
+
+📌 Key Ideas:
+Base case: index == nums.length → add current subset
+
+Recursive case:
+
+include nums[index]
+
+skip nums[index]
+
+💡 Code:
+java
+Copy
+Edit
+void generateSubsets(int[] nums, int index, List<Integer> curr, List<List<Integer>> res) {
+    if (index == nums.length) {
+        res.add(new ArrayList<>(curr));
+        return;
+    }
+
+    // Include
+    curr.add(nums[index]);
+    generateSubsets(nums, index + 1, curr, res);
+
+    // Exclude
+    curr.remove(curr.size() - 1);
+    generateSubsets(nums, index + 1, curr, res);
+}
+🟡 Medium 2: Letter Combinations of a Phone Number
+Problem: Given digits '23', return all possible letter combinations like on a phone keypad.
+
+🧠 Approach:
+Use recursion to build strings
+
+Each digit maps to 3–4 letters (like '2' → 'abc')
+
+📌 Key Ideas:
+Base case: if index == digits.length(), add current string
+
+Recursive case: for each letter of current digit, recurse
+
+💡 Code:
+java
+Copy
+Edit
+Map<Character, String> map = Map.of(
+    '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
+    '6', "mno", '7', "pqrs", '8', "tuv", '9', "wxyz"
+);
+
+void backtrack(String digits, int index, StringBuilder curr, List<String> res) {
+    if (index == digits.length()) {
+        res.add(curr.toString());
+        return;
+    }
+
+    for (char c : map.get(digits.charAt(index)).toCharArray()) {
+        curr.append(c);
+        backtrack(digits, index + 1, curr, res);
+        curr.deleteCharAt(curr.length() - 1);
+    }
+}
+🔴 Hard 1: N-Queens
+Problem: Place N queens on an N×N board so no two attack each other.
+
+🧠 Approach:
+Try placing queen in each row
+
+Track attacked columns and diagonals
+
+📌 Key Ideas:
+Base case: placed all queens → store board
+
+Recursive case: try all columns in current row if safe
+
+💡 Code Sketch:
+java
+Copy
+Edit
+void solve(int row, int n, boolean[] cols, boolean[] d1, boolean[] d2, List<String> board, List<List<String>> res) {
+    if (row == n) {
+        res.add(new ArrayList<>(board));
+        return;
+    }
+
+    for (int col = 0; col < n; col++) {
+        if (cols[col] || d1[row - col + n - 1] || d2[row + col]) continue;
+
+        char[] rowChars = new char[n];
+        Arrays.fill(rowChars, '.');
+        rowChars[col] = 'Q';
+        board.add(new String(rowChars));
+
+        cols[col] = d1[row - col + n - 1] = d2[row + col] = true;
+        solve(row + 1, n, cols, d1, d2, board, res);
+        cols[col] = d1[row - col + n - 1] = d2[row + col] = false;
+
+        board.remove(board.size() - 1);
+    }
+}
+🔴 Hard 2: Word Break
+Problem: Can you break a string into valid dictionary words?
+
+🧠 Approach:
+Try every prefix recursively
+
+Memoize to avoid recomputation
+
+💡 Code:
+java
+Copy
+Edit
+boolean wordBreak(String s, Set<String> dict, Map<String, Boolean> memo) {
+    if (s.isEmpty()) return true;
+    if (memo.containsKey(s)) return memo.get(s);
+
+    for (int i = 1; i <= s.length(); i++) {
+        String prefix = s.substring(0, i);
+        String suffix = s.substring(i);
+        if (dict.contains(prefix) && wordBreak(suffix, dict, memo)) {
+            memo.put(s, true);
+            return true;
+        }
+    }
+    memo.put(s, false);
+    return false;
+}
+🔴 Hard 3: Palindrome Partitioning
+Problem: Partition a string such that each substring is a palindrome.
+
+🧠 Approach:
+Backtrack with prefix + check palindrome
+
+Add partition when whole string is used
+
+💡 Code:
+java
+Copy
+Edit
+void backtrack(String s, int start, List<String> path, List<List<String>> res) {
+    if (start == s.length()) {
+        res.add(new ArrayList<>(path));
+        return;
+    }
+
+    for (int end = start + 1; end <= s.length(); end++) {
+        String sub = s.substring(start, end);
+        if (isPalindrome(sub)) {
+            path.add(sub);
+            backtrack(s, end, path, res);
+            path.remove(path.size() - 1);
+        }
+    }
+}
+
+boolean isPalindrome(String s) {
+    int l = 0, r = s.length() - 1;
+    while (l < r) if (s.charAt(l++) != s.charAt(r--)) return false;
+    return true;
+}
+✅ Summary Table
+Difficulty	Problem	Pattern	Technique
+Easy	Factorial	Basic recursion	Direct math
+Medium	Subsets	Backtracking	Include/Exclude
+Medium	Phone Digits → Letters	Recursive choices	DFS
+Hard	N-Queens	Backtracking	Row + Safety
+Hard	Word Break	Recursion + Memo	Prefix Search
+Hard	Palindrome Partitioning	Backtracking	Prefix & Check
+
