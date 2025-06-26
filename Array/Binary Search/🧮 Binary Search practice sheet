@@ -1,0 +1,34 @@
+🔢 LeetCode Practice Problems
+🟢 Easy
+| #   | Problem                | Type        |
+| --- | ---------------------- | ----------- |
+| 704 | Binary Search          | Classic     |
+| 35  | Search Insert Position | Lower Bound |
+
+🟡 Medium
+| #   | Problem                                 | Type                   |
+| --- | --------------------------------------- | ---------------------- |
+| 34  | Find First and Last Position of Element | Lower/Upper Bound      |
+| 153 | Find Minimum in Rotated Sorted Array    | Rotated Array          |
+| 162 | Find Peak Element                       | Peak Finding           |
+| 875 | Koko Eating Bananas                     | Search on Answer       |
+| 410 | Split Array Largest Sum                 | Binary Search + Greedy |
+
+🔴 Hard
+| #    | Problem                                     | Type               |
+| ---- | ------------------------------------------- | ------------------ |
+| 4    | Median of Two Sorted Arrays                 | Binary Partition   |
+| 1231 | Divide Chocolate                            | Search on Answer   |
+| 154  | Min in Rotated Sorted Array II (with dupes) | Edge case handling |
+
+
+🛠️ Bonus Tip
+✅ Always ask:
+
+Is the array sorted?
+
+Is the function/condition monotonic?
+
+Can I convert the problem to a decision of “Yes/No” for a given value?
+
+If yes, 🧮 Binary Search is your tool!
