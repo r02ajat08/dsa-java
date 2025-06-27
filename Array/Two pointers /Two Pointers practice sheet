@@ -24,6 +24,9 @@
 9️⃣	Merge Sorted Array (In-place)	Merge two sorted arrays without extra space	LeetCode #88
 🔟	Shortest Subarray to Be Removed to Make Array Sorted	Remove the smallest subarray to sort the array	LeetCode #1574
 
+other problems 
+question 189 rotate array
+
 💡 Tips for Two Pointers
 Start from ends when working with sorted arrays.
 
