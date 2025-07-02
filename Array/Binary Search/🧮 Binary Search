@@ -1,3 +1,4 @@
+
 🧮 Binary Search – DSA Pattern
 🔍 What is Binary Search?
 Binary Search is used when you have a sorted array or you can apply monotonic logic (i.e., answer becomes better/worse as you move right). You repeatedly cut the search space in half — hence O(log n) time.
