@@ -98,3 +98,4 @@ Quick sort is the go-to for in-place fast sorting (except in worst case).
 | 🧮 **Queue / Stack**                      | Occasionally used with BFS/DFS + bitmask states                  |
 | 📈 **Trie (Binary Trie)**                 | Store binary representation of numbers (used in max XOR queries) |
 
+
