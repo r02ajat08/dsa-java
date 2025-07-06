@@ -1,3 +1,4 @@
+
 | 🧩 **Pattern**         | 📘 **Problem Type**                           | 🧰 **Data Structure Used** | ⏱️ **Time** | 🧮 **Space** |
 | ---------------------- | --------------------------------------------- | -------------------------- | ----------- | ------------ |
 | 🔲 **Sliding Window**  | Fixed or variable subarray analysis           | ➖ Variables / Queue        | O(n)        | O(1) or O(k) |
