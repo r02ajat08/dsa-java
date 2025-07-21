@@ -10,7 +10,6 @@
 | 📉 **Monotonic Stack** | Next Greater Element, Stock Span problems     | 🧱 Stack                   | O(n)        | O(n)         |
 
 
-
 | 🔢     | 🧠 Pattern / Algorithm          | ⏱️ Time Complexity        | 💾 Space Complexity | 🔍 Use Case Keywords                            |
 | ------ | ------------------------------- | ------------------------- | ------------------- | ----------------------------------------------- |
 | 1️⃣    | 🔄 **Sliding Window**           | `O(n)`                    | `O(1)` / `O(k)`     | 📏 Subarray, sum, average, max/min window       |
